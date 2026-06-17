@@ -1,14 +1,15 @@
 // Prisma schema — banco de leads do site Nexio.
-// Dev: SQLite. Para produção (AWS RDS), trocar provider para "postgresql"
-// e o DATABASE_URL — o model abaixo é portável.
+// Postgres no Supabase (projeto Nexio-SS). DATABASE_URL usa o pooler
+// (transaction, 6543); DIRECT_URL é a conexão de sessão (5432) p/ migrations.
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Lead {
