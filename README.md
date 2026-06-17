@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nexio — Site Institucional
 
-## Getting Started
+Landing + páginas essenciais (Serviços e Contato) da **Nexio · Softwares e Sistemas**.
+Construído com Next.js (App Router), TypeScript, Tailwind CSS v4 e Prisma.
 
-First, run the development server:
+## Stack
+- **Next.js 16** (App Router, Server Actions) + **React 19**
+- **TypeScript** + **Tailwind CSS v4** (tokens em `src/app/globals.css`)
+- **Prisma + SQLite** para os leads (portável p/ PostgreSQL/RDS na fase AWS)
+- **react-hook-form + zod** (validação client e server com o mesmo schema)
 
+## Rodando localmente
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env          # ajuste as variáveis
+npx prisma migrate dev        # cria o banco SQLite (prisma/dev.db)
+npm run dev                   # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Variáveis de ambiente (`.env`)
+| Variável | Descrição |
+| --- | --- |
+| `DATABASE_URL` | Conexão do banco. Dev: `file:./dev.db` |
+| `ADMIN_PASSWORD` | Senha do painel `/admin` |
+| `AUTH_SECRET` | Segredo p/ assinar o cookie de sessão (string longa/aleatória) |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | WhatsApp para o link de follow-up (só dígitos) |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Rotas
+- `/` — landing (hero, números, serviços, stack, infra AWS, cases, sobre, CTA)
+- `/servicos` — detalhe dos 7 serviços
+- `/contato` — formulário funcional (grava lead no banco)
+- `/admin` — painel de leads (protegido por senha) · `/admin/login`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Painel de leads
+Acesse `/admin`, faça login com `ADMIN_PASSWORD`. Os envios do formulário de
+contato aparecem na tabela. O acesso é protegido por cookie httpOnly assinado.
 
-## Learn More
+## Conteúdo (placeholders)
+Todo o conteúdo editável está em **`src/lib/content.ts`** e marcado com `TODO`
+onde precisa de dados reais (domínio, e-mail, WhatsApp, números, cases, time).
 
-To learn more about Next.js, take a look at the following resources:
+## Próximas fases (do planejamento, fora do escopo atual)
+Portfólio/Blog via CMS, integração SES + WhatsApp API + CRM, GA4/Clarity,
+deploy AWS (S3/CloudFront, Amplify, Route 53, Lambda), painel admin completo.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Build de produção
+```bash
+npm run build && npm start
+```
+# Site_Nexio

@@ -1,26 +1,139 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Nexio design tokens (do PDF de planejamento) ─────────────────── */
+@theme {
+  --color-bg: #0a0a0a; /* fundo escuro (preto puro) */
+  --color-surface: #0f172a; /* seções alternadas */
+  --color-surface-2: #0c1322; /* variação mais escura */
+  --color-fg: #f8fafc; /* texto principal */
+  --color-muted: #94a3b8; /* texto secundário */
+  --color-primary: #0a4de0; /* azul elétrico */
+  --color-primary-600: #0840bd;
+  --color-accent: #60a5fa; /* glow / destaque */
+  --color-gold: #fbbf24; /* destaque pontual (eco do amarelo do conexte) */
+  --color-line: rgba(148, 163, 184, 0.14); /* hairlines */
+  --color-line-strong: rgba(148, 163, 184, 0.26);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+  --font-display: var(--font-space), var(--font-inter), ui-sans-serif, sans-serif;
+
+  --leading-relaxed: 1.6;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Base ─────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-primary) 40%, transparent);
+  color: #fff;
+}
+
+/* Foco acessível e consistente */
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Container editorial (1280px, padding 16 mobile / 48 desktop) ──── */
+@utility container-nx {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 1024px) {
+  .container-nx {
+    padding-inline: 3rem;
+  }
+}
+
+/* Grid de fundo sutil — assinatura técnica, não decoração genérica */
+.grid-lines {
+  background-image:
+    linear-gradient(to right, var(--color-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 75%);
+}
+
+/* ── Motion discreto: reveal no viewport ──────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal[data-shown="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none;
+  }
+}
+
+/* ── Hero: máscara/gradiente que esmaece a foto para o fundo escuro ──── */
+.hero-photo-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 45%, #000 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 45%, #000 100%);
+}
+.hero-photo-overlay {
+  background:
+    linear-gradient(to right, var(--color-bg) 0%, color-mix(in srgb, var(--color-bg) 55%, transparent) 40%, transparent 70%),
+    linear-gradient(to top, var(--color-bg) 0%, transparent 35%);
+}
+
+/* ── Animação de abertura (IntroLoader) ───────────────────────────────── */
+@keyframes intro-logo-in {
+  0% { opacity: 0; transform: translateY(10px) scale(0.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes intro-sweep {
+  0% { transform: scaleX(0); transform-origin: left; }
+  50% { transform: scaleX(1); transform-origin: left; }
+  50.01% { transform-origin: right; }
+  100% { transform: scaleX(0); transform-origin: right; }
+}
+@keyframes intro-out {
+  0% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
+.intro-overlay {
+  animation: intro-out 0.5s ease 1.15s forwards;
+}
+.intro-logo {
+  animation: intro-logo-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.intro-sweep {
+  animation: intro-sweep 1.1s cubic-bezier(0.65, 0, 0.35, 1) 0.15s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-overlay,
+  .intro-logo,
+  .intro-sweep {
+    animation: none !important;
+  }
 }
