@@ -162,30 +162,60 @@ export const infra = [
   },
 ];
 
-export const portfolio = [
+export type PortfolioItem = {
+  title: string;
+  category: string;
+  problem: string;
+  solution: string;
+  stackUsed: string[];
+  result: string;
+  url?: string;
+};
+
+export const portfolio: PortfolioItem[] = [
   {
-    title: "Plataforma SaaS de gestão logística",
+    title: "Conexte Tecnologia",
+    category: "Site institucional",
+    problem:
+      "Empresa de infraestrutura de TI sem presença digital à altura, atendendo empresas privadas e órgãos públicos.",
+    solution:
+      "Site institucional sob medida com animações GSAP, identidade própria e foco em geração de contato.",
+    stackUsed: ["HTML/CSS", "JavaScript", "GSAP", "Vercel"],
+    result: "Presença digital profissional e canal de contato direto via WhatsApp.",
+    url: "https://conexte.com.br",
+  },
+  {
+    title: "Henrique Veículos",
+    category: "Sistema Web",
+    problem:
+      "Revenda de veículos sem vitrine online e com estoque atualizado manualmente.",
+    solution:
+      "Site público em Next.js com estoque sincronizado via XML do Revenda Mais e formulários (avaliação, financiamento, consignação) direto no WhatsApp.",
+    stackUsed: ["Next.js", "TypeScript", "Vercel"],
+    result: "Estoque sempre atualizado automaticamente e leads chegando pelo site.",
+    url: "https://henrique-veiculos.vercel.app",
+  },
+  {
+    title: "BarberOS",
     category: "SaaS",
-    problem: "Operação logística gerida em planilhas, sem visibilidade entre filiais.",
-    solution: "SaaS multitenancy com painel por filial, billing recorrente e API de rastreio.",
-    stackUsed: ["Next.js", "Node.js", "PostgreSQL", "AWS"],
-    result: "−38% no tempo de operação e cobrança automática de 200+ clientes.",
+    problem:
+      "Barbearias gerenciando agenda, equipe e clientes no caderno e no WhatsApp, sem controle financeiro.",
+    solution:
+      "SaaS multi-tenant com agendamento online, site próprio por barbearia, gestão de equipe, dashboard financeiro e resumo do mês com IA.",
+    stackUsed: ["React", "TypeScript", "Supabase", "Stripe", "IA"],
+    result: "Agenda, equipe e finanças centralizadas, com assinatura recorrente por barbearia.",
+    url: "https://barberos.vercel.app",
   },
   {
-    title: "Automação de atendimento com IA",
-    category: "Automação IA",
-    problem: "Time de suporte sobrecarregado com perguntas repetitivas e triagem manual.",
-    solution: "Agente de IA que qualifica e responde 1ª linha, integrado ao CRM via webhook.",
-    stackUsed: ["Python", "LLM", "Webhooks", "AWS Lambda"],
-    result: "70% dos tickets resolvidos sem intervenção humana.",
-  },
-  {
-    title: "Sistema web para indústria",
-    category: "Sistema",
-    problem: "Controle de produção fragmentado entre setores e sem rastreabilidade.",
-    solution: "Sistema único com permissões, dashboards em tempo real e auditoria.",
-    stackUsed: ["React", "Node.js", "PostgreSQL", "Docker"],
-    result: "Visibilidade ponta a ponta e relatórios que antes levavam dias.",
+    title: "Cardápio Santa Helena",
+    category: "Cardápio digital",
+    problem:
+      "Panificadora dependia de cardápio físico, difícil de atualizar e sem acesso pelo celular do cliente.",
+    solution:
+      "Cardápio digital responsivo com busca, categorias, destaques e botão de pedido no WhatsApp.",
+    stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
+    result: "Cardápio acessível por QR Code, atualização instantânea e pedidos via WhatsApp.",
+    url: "https://cardapio-santa-helena.vercel.app",
   },
 ];
 

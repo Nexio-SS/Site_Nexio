@@ -60,6 +60,15 @@ body {
   }
 }
 
+/* ── Carrossel de projetos: scrollbar oculta (navega por setas/arraste) ─ */
+.nx-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.nx-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Grid de fundo sutil — assinatura técnica, não decoração genérica */
 .grid-lines {
   background-image:
