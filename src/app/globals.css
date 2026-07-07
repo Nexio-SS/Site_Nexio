@@ -137,6 +137,12 @@ body {
   .orbit-pulse, .orbit-spin, .orbit-spin-rev { animation: none; }
 }
 
+/* ── LP: anel de progresso do ciclo (método orbital) ──────────────────── */
+@keyframes orbit-progress {
+  from { stroke-dashoffset: var(--dash); }
+  to { stroke-dashoffset: 0; }
+}
+
 /* ── LP: fade suave da descrição da etapa ativa (método orbital) ──────── */
 @keyframes lp-fade {
   from { opacity: 0; transform: translateY(8px); }
