@@ -6,7 +6,6 @@ import { site } from "@/lib/content";
 import {
   LpHero,
   LpTicker,
-  LpUrgency,
   LpCapture,
   LpResults,
   LpAbout,
@@ -63,7 +62,6 @@ export default async function LpPage({
       <main className="flex-1 pb-20 lg:pb-0">
         <LpHero />
         <LpTicker />
-        <LpUrgency />
         <LpCapture utm={utm} />
         <LpResults />
         <LpAbout />

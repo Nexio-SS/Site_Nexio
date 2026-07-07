@@ -114,6 +114,45 @@ body {
     linear-gradient(to top, var(--color-bg) 0%, transparent 35%);
 }
 
+/* ── LP: seção orbital do método (glow pulsante + anel girando) ───────── */
+@keyframes orbit-pulse {
+  0%, 100% { box-shadow: 0 0 22px rgba(10, 77, 224, 0.45), inset 0 0 18px rgba(96, 165, 250, 0.15); }
+  50% { box-shadow: 0 0 46px rgba(96, 165, 250, 0.7), inset 0 0 24px rgba(96, 165, 250, 0.25); }
+}
+.orbit-pulse {
+  animation: orbit-pulse 3.2s ease-in-out infinite;
+}
+@keyframes orbit-spin {
+  to { transform: rotate(360deg); }
+}
+.orbit-spin {
+  transform-origin: center;
+  animation: orbit-spin 44s linear infinite;
+}
+.orbit-spin-rev {
+  transform-origin: center;
+  animation: orbit-spin 60s linear infinite reverse;
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbit-pulse, .orbit-spin, .orbit-spin-rev { animation: none; }
+}
+
+/* ── LP: fade suave da descrição da etapa ativa (método orbital) ──────── */
+@keyframes lp-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+.lp-fade { animation: lp-fade 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@media (prefers-reduced-motion: reduce) {
+  .lp-fade { animation: none; }
+}
+
+/* ── LP: máscara que esmaece as bordas do lockup (some o retângulo) ───── */
+.lp-logo-mask {
+  -webkit-mask-image: radial-gradient(ellipse 72% 72% at 50% 44%, #000 52%, transparent 82%);
+  mask-image: radial-gradient(ellipse 72% 72% at 50% 44%, #000 52%, transparent 82%);
+}
+
 /* ── LP: ticker de prova social (marquee infinito) ────────────────────── */
 @keyframes lp-marquee {
   from { transform: translateX(0); }
@@ -122,8 +161,12 @@ body {
 .lp-marquee {
   animation: lp-marquee 32s linear infinite;
 }
+.lp-marquee-rev {
+  animation: lp-marquee 30s linear infinite reverse;
+}
 @media (prefers-reduced-motion: reduce) {
-  .lp-marquee {
+  .lp-marquee,
+  .lp-marquee-rev {
     animation: none;
   }
 }

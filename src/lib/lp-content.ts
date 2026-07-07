@@ -10,22 +10,25 @@
 export const lp = {
   // ── Hero ──────────────────────────────────────────────────────────
   hero: {
-    eyebrow: "Software sob medida · IA · AWS",
-    title: "O processo manual que trava sua empresa vira",
-    titleAccent: "um sistema que trabalha por você",
+    eyebrow: "Tudo sob medida · do código ao cliente",
+    title: "A tecnologia do seu negócio e o tráfego que traz cliente —",
+    titleAccent: "tudo num só parceiro",
     subtitle:
-      "Sites, sistemas de gestão, aplicativos e automações com IA — da ideia ao ar, com engenharia de produção e infraestrutura profissional na AWS. Sem template genérico, sem gambiarra.",
+      "Sites, softwares, apps, SaaS, agentes e automações com IA feitos sob medida — mais tráfego pago pra colocar sua marca na frente de quem está pronto pra comprar. A Nexio constrói e também traz resultado.",
     cta: "Quero meu diagnóstico gratuito",
     microProof: "Resposta em até 1 dia útil · sem compromisso · seus dados seguros",
   },
 
-  // ── Ticker de prova social ────────────────────────────────────────
+  // ── Ticker de prova social — soluções Nexio + prova ───────────────
   ticker: [
+    "Tráfego pago que traz cliente",
+    "Sites & landing pages de alta conversão",
+    "Softwares e sistemas sob medida",
+    "Aplicativos mobile iOS & Android",
+    "SaaS do zero ao lançamento",
+    "Agentes e automações com IA",
+    "Tudo feito sob medida pro seu negócio",
     "+40 projetos entregues",
-    "+25 clientes atendidos",
-    "6 anos de mercado",
-    "99,9% de uptime em produção",
-    "Next.js · AWS · IA aplicada",
   ],
 
   // ── Faixa de urgência / escassez honesta ──────────────────────────
@@ -58,14 +61,54 @@ export const lp = {
 
   // ── Quem somos ────────────────────────────────────────────────────
   about: {
-    title: "Um parceiro técnico, não um freelancer sumido",
-    body: "A Nexio é uma software house da Baixada Santista que constrói software de produção — não script feito às pressas. Cuidamos do código, da infraestrutura na AWS e da evolução do seu produto, para que você foque no que faz o seu negócio crescer. Cada projeto tem arquitetura própria, documentação e ownership do roadmap.",
+    title: "Um parceiro de tecnologia, não um freelancer sumido",
+    body: "A Nexio é uma software house da Baixada Santista que faz tudo sob medida: do site ao sistema, dos apps às automações e agentes com IA — e ainda cuida do tráfego pago que traz cliente. Você não precisa de uma agência pra anunciar e outra empresa pra desenvolver: a gente constrói a tecnologia e traz o resultado, num só lugar.",
     pillars: [
-      "Código de produção, testado e documentado",
-      "Infraestrutura profissional na AWS",
+      "Construção e captação sob o mesmo teto",
+      "Tudo personalizado — nada de template ou solução de prateleira",
       "Acompanhamento próximo, do diagnóstico ao pós-entrega",
     ],
   },
+
+  // ── O que fazemos (serviços da LP) ────────────────────────────────
+  services: [
+    {
+      num: "01",
+      title: "Tráfego pago",
+      short:
+        "Campanhas no Meta e no Google que colocam seu negócio na frente de quem está pronto pra comprar.",
+    },
+    {
+      num: "02",
+      title: "Sites & landing pages",
+      short:
+        "Páginas rápidas, sob medida e focadas em conversão — como esta que você está vendo agora.",
+    },
+    {
+      num: "03",
+      title: "Softwares & sistemas",
+      short:
+        "Software sob medida pro seu processo: ERPs, CRMs, painéis e portais. Nada de prateleira.",
+    },
+    {
+      num: "04",
+      title: "Aplicativos",
+      short:
+        "Apps mobile iOS e Android e PWAs com experiência fluida em qualquer dispositivo.",
+    },
+    {
+      num: "05",
+      title: "SaaS",
+      short:
+        "Seu serviço virando produto digital recorrente: multitenancy, planos e assinatura.",
+    },
+    {
+      num: "06",
+      title: "IA & automações",
+      short:
+        "Agentes de IA e automações sob medida que atendem, qualificam leads e eliminam o trabalho manual do seu negócio.",
+    },
+  ],
 
   // ── O Método Nexio ────────────────────────────────────────────────
   method: {
@@ -90,8 +133,13 @@ export const lp = {
       },
       {
         n: "04",
-        title: "No ar & evolução",
-        desc: "Deploy na AWS, monitoramento, suporte e melhoria contínua depois da entrega.",
+        title: "Deploy",
+        desc: "Publicação na AWS com monitoramento, segurança e ambiente de produção.",
+      },
+      {
+        n: "05",
+        title: "Evolução",
+        desc: "Suporte contínuo e melhorias com base em uso real depois da entrega.",
       },
     ],
   },
@@ -128,8 +176,8 @@ export const lp = {
 
   // ── Garantia / time exclusivo ─────────────────────────────────────
   guarantee: {
-    title: "Um time de produto inteiro, sem folha de pagamento",
-    body: "Engenharia, design e produto sob demanda. Você recebe a estrutura de uma equipe de tecnologia sem o custo de contratar, treinar e reter — sem CLT, sem rotatividade, sem RH. Você cuida do negócio; a gente cuida da tecnologia.",
+    title: "Um time inteiro de tecnologia e marketing, sem folha de pagamento",
+    body: "Engenharia, design, produto e tráfego pago sob demanda. Você recebe a estrutura de uma equipe completa sem o custo de contratar, treinar e reter — sem CLT, sem rotatividade, sem RH. Você cuida do negócio; a gente cuida da tecnologia e da captação.",
     cta: "Falar com um especialista",
   },
 
@@ -140,8 +188,12 @@ export const lp = {
       a: "Depende do escopo — por isso o diagnóstico é gratuito. Você recebe uma proposta com preço e prazo claros antes de qualquer compromisso.",
     },
     {
+      q: "Vocês também cuidam do tráfego pago / anúncios?",
+      a: "Sim. Além de construir o site, sistema ou app, gerenciamos suas campanhas no Meta e no Google — a mesma equipe que cria a tecnologia traz o cliente.",
+    },
+    {
       q: "Quanto tempo leva?",
-      a: "Um site fica pronto em semanas; sistemas, apps e SaaS variam conforme o escopo. Definimos um prazo real na proposta e cumprimos.",
+      a: "Uma landing page fica pronta em dias; sites, sistemas, apps e SaaS variam conforme o escopo. Campanhas de tráfego começam a rodar em poucos dias. Definimos um prazo real na proposta.",
     },
     {
       q: "Vocês atendem meu segmento ou minha cidade?",
@@ -163,11 +215,12 @@ export const lp = {
 
   // Tipos de necessidade no formulário da LP (mapeia para projectType do Lead)
   needs: [
-    "Site institucional / landing page",
-    "Sistema de gestão (ERP/CRM/painel)",
+    "Tráfego pago / gestão de anúncios",
+    "Site / landing page",
+    "Software ou sistema sob medida",
     "Aplicativo mobile",
     "SaaS / produto digital",
-    "Automação com IA",
+    "Agente ou automação com IA",
     "Ainda não sei, quero orientação",
   ] as const,
 } as const;

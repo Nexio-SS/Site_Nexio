@@ -150,7 +150,7 @@ export function LpForm({ utm }: { utm: Utm }) {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-5 py-4 text-base font-semibold text-white transition-colors hover:bg-primary-600 disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-primary px-5 py-4 text-base font-semibold text-white transition-all duration-300 hover:bg-[#1a5cf0] hover:shadow-[0_0_30px_rgba(96,165,250,0.7)] disabled:cursor-not-allowed disabled:opacity-60 disabled:shadow-none"
       >
         {isSubmitting ? "Enviando…" : lp.hero.cta}
         {!isSubmitting && <Arrow />}
