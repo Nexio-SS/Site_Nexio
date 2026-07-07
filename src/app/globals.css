@@ -114,6 +114,20 @@ body {
     linear-gradient(to top, var(--color-bg) 0%, transparent 35%);
 }
 
+/* ── LP: ticker de prova social (marquee infinito) ────────────────────── */
+@keyframes lp-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.lp-marquee {
+  animation: lp-marquee 32s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lp-marquee {
+    animation: none;
+  }
+}
+
 /* ── Animação de abertura (IntroLoader) ───────────────────────────────── */
 @keyframes intro-logo-in {
   0% { opacity: 0; transform: translateY(10px) scale(0.96); }
