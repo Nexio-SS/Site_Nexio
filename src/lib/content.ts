@@ -204,7 +204,7 @@ export const portfolio: PortfolioItem[] = [
       "SaaS multi-tenant com agendamento online, site próprio por barbearia, gestão de equipe, dashboard financeiro e resumo do mês com IA.",
     stackUsed: ["React", "TypeScript", "Supabase", "Stripe", "IA"],
     result: "Agenda, equipe e finanças centralizadas, com assinatura recorrente por barbearia.",
-    url: "https://barberos.vercel.app",
+    url: "https://barberos-pied.vercel.app",
   },
   {
     title: "Cardápio Santa Helena",
@@ -216,6 +216,127 @@ export const portfolio: PortfolioItem[] = [
     stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
     result: "Cardápio acessível por QR Code, atualização instantânea e pedidos via WhatsApp.",
     url: "https://cardapio-santa-helena.vercel.app",
+  },
+  {
+    title: "Clippboard",
+    category: "SaaS",
+    problem:
+      "Personal trainers montando treino em planilha solta, cobrando aluno pelo WhatsApp e sem histórico de evolução.",
+    solution:
+      "Painel com alunos, planilhas de treino por divisão, agenda, avaliações físicas com gráfico de evolução e biblioteca de exercícios. O aluno acompanha o treino por um link próprio, direto no celular.",
+    stackUsed: ["Next.js", "TypeScript", "Supabase", "PWA"],
+    result: "Treino, agenda e evolução do aluno num lugar só, com login Google e dado na nuvem.",
+    url: "https://clippboard.vercel.app",
+  },
+  {
+    title: "AgendaSorriso",
+    category: "Automação com IA",
+    problem:
+      "Clínicas odontológicas perdendo paciente porque a mensagem no WhatsApp fica sem resposta fora do horário.",
+    solution:
+      "Agente de IA no WhatsApp que responde e agenda consulta, com página de venda própria. O formulário grava o lead no CRM e, se o banco não responder, a mensagem vai pronta pro WhatsApp.",
+    stackUsed: ["HTML/CSS", "JavaScript", "Supabase", "Meta Pixel"],
+    result: "Nenhum lead se perde: ou cai no CRM, ou chega no WhatsApp com os dados preenchidos.",
+    url: "https://agendasorriso-lp.vercel.app",
+  },
+  {
+    title: "Pauta",
+    category: "Aplicativo",
+    problem:
+      "Estudante do ENEM treinando redação sem correção e estudando matéria sem saber o que cai mais.",
+    solution:
+      "App de treino com redação corrigida nas 5 competências e questões reais das provas anteriores nas 4 áreas, com a pauta do dia e contagem até a prova.",
+    stackUsed: ["Next.js", "TypeScript", "Tailwind", "IA"],
+    result: "Redação e matérias no mesmo app, com evolução por competência a cada correção.",
+    url: "https://pauta-enem.vercel.app",
+  },
+  {
+    title: "Comercial Nazaro",
+    category: "E-commerce",
+    problem:
+      "Loja de material de construção vendendo só no balcão e no telefone, sem catálogo online.",
+    solution:
+      "Loja virtual com catálogo por categoria (cimento, areia e pedra, elétrica, hidráulica, tintas), carrinho, conta do cliente e painel admin.",
+    stackUsed: ["React", "TypeScript", "Vite", "Tailwind"],
+    result: "Catálogo com preço aberto e pedido pelo site ou pelo WhatsApp.",
+    url: "https://comercial-nazaro.vercel.app",
+  },
+  {
+    title: "Padaria Rafael Vidal",
+    category: "Site + cardápio digital",
+    problem:
+      "Padaria com cardápio só impresso e sem um endereço na internet pra mostrar a casa.",
+    solution:
+      "Site institucional e cardápio digital com a identidade tirada do cardápio impresso: horários, a casa, galeria dos pratos e delivery.",
+    stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
+    result: "Cardápio no celular do cliente e site com horário e contato sempre à mão.",
+    url: "https://padaria-vidal-site.vercel.app",
+  },
+  {
+    title: "Clínica do Corpo",
+    category: "Site institucional",
+    problem:
+      "Academia sem site, com horário e informações espalhados em posts do Instagram.",
+    solution:
+      "Site com a estrutura da academia, painel de horário que mostra se está aberto agora, selo Wellhub e TotalPass e contato direto pelo WhatsApp.",
+    stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
+    result: "Horário, estrutura e contato numa página que o aluno acha no Google.",
+    url: "https://site-academia-clinica-do-corpo.vercel.app",
+  },
+  {
+    title: "Poker na Praia",
+    category: "Site institucional",
+    problem:
+      "Clube de poker que também é churrascaria e hamburgueria, com a programação só no Instagram.",
+    solution:
+      "Site com identidade tirada da logo: torneios, cash game, ladies poker e home game, cozinha da casa e como chegar.",
+    stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
+    result: "O clube e a cozinha apresentados juntos, com WhatsApp e Instagram a um toque.",
+    url: "https://poker-na-praia.vercel.app",
+  },
+  {
+    title: "Kontatus",
+    category: "Site de loja",
+    problem:
+      "Loja de moda feminina e plus size mostrando as peças só no feed do Instagram.",
+    solution:
+      "Site com lookbook casual e plus size com fotos reais da loja, montador de looks e pedido pelo WhatsApp com a mensagem já escrita.",
+    stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
+    result: "A cliente monta o look no site e chega no WhatsApp sabendo o que quer.",
+    url: "https://kontatus-three.vercel.app",
+  },
+  {
+    title: "Strutura Ferry Boat",
+    category: "Site de loja",
+    problem:
+      "Loja de roupas no terminal do Ferry Boat sem vitrine online para quem passa pela balsa.",
+    solution:
+      "Site com lookbook masculino e feminino, montador de looks, provador com manequim e mapa de como chegar com horário de hoje.",
+    stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
+    result: "Vitrine da loja aberta 24h, com rota até o terminal.",
+    url: "https://strutura-ferryboat.vercel.app",
+  },
+  {
+    title: "Juice 6ix",
+    category: "Site + pedidos",
+    problem:
+      "Casa de sucos naturais sem um lugar para mostrar os sabores e receber pedido.",
+    solution:
+      "Site com um sabor para cada dia da semana, carrinho e pedido direto, na identidade da marca.",
+    stackUsed: ["React", "TypeScript", "Vite", "Tailwind"],
+    result: "Cardápio da semana com preço e pedido em poucos toques.",
+    url: "https://juice-six-glow.vercel.app",
+  },
+  {
+    title: "Joelheiras ChrisSports",
+    category: "Landing page de venda",
+    problem:
+      "Loja precisando vender um produto específico por tráfego pago, sem página que converta.",
+    solution:
+      "Landing page com vídeo de abertura, benefícios do produto e checkout integrado, pensada para o clique que vem do anúncio.",
+    stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
+    result: "Do anúncio ao checkout numa página só.",
+    url: "https://joelheiras-lp.vercel.app",
   },
 ];
 
