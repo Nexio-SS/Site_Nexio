@@ -251,17 +251,6 @@ export const portfolio: PortfolioItem[] = [
     url: "https://pauta-enem.vercel.app",
   },
   {
-    title: "Comercial Nazaro",
-    category: "E-commerce",
-    problem:
-      "Loja de material de construção vendendo só no balcão e no telefone, sem catálogo online.",
-    solution:
-      "Loja virtual com catálogo por categoria (cimento, areia e pedra, elétrica, hidráulica, tintas), carrinho, conta do cliente e painel admin.",
-    stackUsed: ["React", "TypeScript", "Vite", "Tailwind"],
-    result: "Catálogo com preço aberto e pedido pelo site ou pelo WhatsApp.",
-    url: "https://comercial-nazaro.vercel.app",
-  },
-  {
     title: "Padaria Rafael Vidal",
     category: "Site + cardápio digital",
     problem:
