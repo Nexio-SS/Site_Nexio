@@ -170,30 +170,45 @@ export type PortfolioItem = {
   stackUsed: string[];
   result: string;
   url?: string;
+  image?: string;
 };
 
 export const portfolio: PortfolioItem[] = [
   {
-    title: "Conexte Tecnologia",
-    category: "Site institucional",
+    title: "Pepsi",
+    category: "Projeto conceito",
     problem:
-      "Empresa de infraestrutura de TI sem presença digital à altura, atendendo empresas privadas e órgãos públicos.",
+      "Marca com três sabores que precisava de uma vitrine onde cada lata tivesse o seu momento.",
     solution:
-      "Site institucional sob medida com animações GSAP, identidade própria e foco em geração de contato.",
-    stackUsed: ["HTML/CSS", "JavaScript", "GSAP", "Vercel"],
-    result: "Presença digital profissional e canal de contato direto via WhatsApp.",
-    url: "https://conexte.com.br",
+      "Slider em tela cheia: a cor do fundo muda por sabor, a lata flutua e inclina seguindo o mouse e abre uma ficha ao clicar.",
+    stackUsed: ["HTML/CSS", "JavaScript", "Animação"],
+    result: "Uma página que se navega como produto, não como catálogo.",
+    url: "https://pepsi-site-phi.vercel.app",
+    image: "/portfolio/pepsi.webp",
   },
   {
-    title: "Henrique Veículos",
-    category: "Sistema Web",
+    title: "Coca-Cola",
+    category: "Projeto conceito",
     problem:
-      "Revenda de veículos sem vitrine online e com estoque atualizado manualmente.",
+      "Como contar a marca pelos momentos de pausa em vez de listar produto.",
     solution:
-      "Site público em Next.js com estoque sincronizado via XML do Revenda Mais e formulários (avaliação, financiamento, consignação) direto no WhatsApp.",
-    stackUsed: ["Next.js", "TypeScript", "Vercel"],
-    result: "Estoque sempre atualizado automaticamente e leads chegando pelo site.",
-    url: "https://henrique-veiculos.vercel.app",
+      "Site editorial com fotos que se revezam no topo, parallax, momentos do dia, o ritual de servir e combinações com comida.",
+    stackUsed: ["React", "TypeScript", "Framer Motion"],
+    result: "Narrativa de campanha num site que se lê rolando.",
+    url: "https://coca-cola-editorial.vercel.app",
+    image: "/portfolio/coca-cola.webp",
+  },
+  {
+    title: "Churrascaria Panela Velha",
+    category: "Site institucional",
+    problem:
+      "Churrascaria com rodízio e pizza conhecida no bairro, mas sem um site à altura da casa.",
+    solution:
+      "Site escuro, guiado por foto, com a logo e as fotos da casa, rodízio, cardápio e reserva pelo WhatsApp.",
+    stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
+    result: "A casa apresentada como restaurante premium, com reserva a um toque.",
+    url: "https://panela-velha-lp.vercel.app",
+    image: "/portfolio/panela-velha.webp",
   },
   {
     title: "BarberOS",
@@ -205,72 +220,7 @@ export const portfolio: PortfolioItem[] = [
     stackUsed: ["React", "TypeScript", "Supabase", "Stripe", "IA"],
     result: "Agenda, equipe e finanças centralizadas, com assinatura recorrente por barbearia.",
     url: "https://barberos-pied.vercel.app",
-  },
-  {
-    title: "Cardápio Santa Helena",
-    category: "Cardápio digital",
-    problem:
-      "Panificadora dependia de cardápio físico, difícil de atualizar e sem acesso pelo celular do cliente.",
-    solution:
-      "Cardápio digital responsivo com busca, categorias, destaques e botão de pedido no WhatsApp.",
-    stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
-    result: "Cardápio acessível por QR Code, atualização instantânea e pedidos via WhatsApp.",
-    url: "https://cardapio-santa-helena.vercel.app",
-  },
-  {
-    title: "Clippboard",
-    category: "SaaS",
-    problem:
-      "Personal trainers montando treino em planilha solta, cobrando aluno pelo WhatsApp e sem histórico de evolução.",
-    solution:
-      "Painel com alunos, planilhas de treino por divisão, agenda, avaliações físicas com gráfico de evolução e biblioteca de exercícios. O aluno acompanha o treino por um link próprio, direto no celular.",
-    stackUsed: ["Next.js", "TypeScript", "Supabase", "PWA"],
-    result: "Treino, agenda e evolução do aluno num lugar só, com login Google e dado na nuvem.",
-    url: "https://clippboard.vercel.app",
-  },
-  {
-    title: "AgendaSorriso",
-    category: "Automação com IA",
-    problem:
-      "Clínicas odontológicas perdendo paciente porque a mensagem no WhatsApp fica sem resposta fora do horário.",
-    solution:
-      "Agente de IA no WhatsApp que responde e agenda consulta, com página de venda própria. O formulário grava o lead no CRM e, se o banco não responder, a mensagem vai pronta pro WhatsApp.",
-    stackUsed: ["HTML/CSS", "JavaScript", "Supabase", "Meta Pixel"],
-    result: "Nenhum lead se perde: ou cai no CRM, ou chega no WhatsApp com os dados preenchidos.",
-    url: "https://agendasorriso-lp.vercel.app",
-  },
-  {
-    title: "Pauta",
-    category: "Aplicativo",
-    problem:
-      "Estudante do ENEM treinando redação sem correção e estudando matéria sem saber o que cai mais.",
-    solution:
-      "App de treino com redação corrigida nas 5 competências e questões reais das provas anteriores nas 4 áreas, com a pauta do dia e contagem até a prova.",
-    stackUsed: ["Next.js", "TypeScript", "Tailwind", "IA"],
-    result: "Redação e matérias no mesmo app, com evolução por competência a cada correção.",
-    url: "https://pauta-enem.vercel.app",
-  },
-  {
-    title: "Padaria Rafael Vidal",
-    category: "Site + cardápio digital",
-    problem:
-      "Padaria com cardápio só impresso e sem um endereço na internet pra mostrar a casa.",
-    solution:
-      "Site institucional e cardápio digital com a identidade tirada do cardápio impresso: horários, a casa, galeria dos pratos e delivery.",
-    stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
-    result: "Cardápio no celular do cliente e site com horário e contato sempre à mão.",
-    url: "https://padaria-vidal-site.vercel.app",
-  },
-  {
-    title: "Clínica do Corpo",
-    category: "Site institucional",
-    problem:
-      "Academia sem site, com horário e informações espalhados em posts do Instagram.",
-    solution:
-      "Site com a estrutura da academia, painel de horário que mostra se está aberto agora, selo Wellhub e TotalPass e contato direto pelo WhatsApp.",
-    stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
-    result: "Horário, estrutura e contato numa página que o aluno acha no Google.",
-    url: "https://site-academia-clinica-do-corpo.vercel.app",
+    image: "/portfolio/barberos.webp",
   },
   {
     title: "Poker na Praia",
@@ -282,17 +232,19 @@ export const portfolio: PortfolioItem[] = [
     stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
     result: "O clube e a cozinha apresentados juntos, com WhatsApp e Instagram a um toque.",
     url: "https://poker-na-praia.vercel.app",
+    image: "/portfolio/poker.webp",
   },
   {
-    title: "Kontatus",
-    category: "Site de loja",
+    title: "Henrique Veículos",
+    category: "Sistema Web",
     problem:
-      "Loja de moda feminina e plus size mostrando as peças só no feed do Instagram.",
+      "Revenda de veículos sem vitrine online e com estoque atualizado manualmente.",
     solution:
-      "Site com lookbook casual e plus size com fotos reais da loja, montador de looks e pedido pelo WhatsApp com a mensagem já escrita.",
-    stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
-    result: "A cliente monta o look no site e chega no WhatsApp sabendo o que quer.",
-    url: "https://kontatus-three.vercel.app",
+      "Site público em Next.js com estoque sincronizado via XML do Revenda Mais e formulários (avaliação, financiamento, consignação) direto no WhatsApp.",
+    stackUsed: ["Next.js", "TypeScript", "Vercel"],
+    result: "Estoque sempre atualizado automaticamente e leads chegando pelo site.",
+    url: "https://henrique-veiculos.vercel.app",
+    image: "/portfolio/henrique.webp",
   },
   {
     title: "Strutura Ferry Boat",
@@ -304,28 +256,115 @@ export const portfolio: PortfolioItem[] = [
     stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
     result: "Vitrine da loja aberta 24h, com rota até o terminal.",
     url: "https://strutura-ferryboat.vercel.app",
+    image: "/portfolio/strutura.webp",
   },
   {
-    title: "Juice 6ix",
-    category: "Site + pedidos",
+    title: "Kontatus",
+    category: "Site de loja",
     problem:
-      "Casa de sucos naturais sem um lugar para mostrar os sabores e receber pedido.",
+      "Loja de moda feminina e plus size mostrando as peças só no feed do Instagram.",
     solution:
-      "Site com um sabor para cada dia da semana, carrinho e pedido direto, na identidade da marca.",
-    stackUsed: ["React", "TypeScript", "Vite", "Tailwind"],
-    result: "Cardápio da semana com preço e pedido em poucos toques.",
-    url: "https://juice-six-glow.vercel.app",
-  },
-  {
-    title: "Joelheiras ChrisSports",
-    category: "Landing page de venda",
-    problem:
-      "Loja precisando vender um produto específico por tráfego pago, sem página que converta.",
-    solution:
-      "Landing page com vídeo de abertura, benefícios do produto e checkout integrado, pensada para o clique que vem do anúncio.",
+      "Site com lookbook casual e plus size com fotos reais da loja, montador de looks e pedido pelo WhatsApp com a mensagem já escrita.",
     stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
-    result: "Do anúncio ao checkout numa página só.",
-    url: "https://joelheiras-lp.vercel.app",
+    result: "A cliente monta o look no site e chega no WhatsApp sabendo o que quer.",
+    url: "https://kontatus-three.vercel.app",
+    image: "/portfolio/kontatus.webp",
+  },
+  {
+    title: "Clippboard",
+    category: "SaaS",
+    problem:
+      "Personal trainers montando treino em planilha solta, cobrando aluno pelo WhatsApp e sem histórico de evolução.",
+    solution:
+      "Painel com alunos, planilhas de treino por divisão, agenda, avaliações físicas com gráfico de evolução e biblioteca de exercícios. O aluno acompanha o treino por um link próprio, direto no celular.",
+    stackUsed: ["Next.js", "TypeScript", "Supabase", "PWA"],
+    result: "Treino, agenda e evolução do aluno num lugar só, com login Google e dado na nuvem.",
+    url: "https://clippboard.vercel.app",
+    image: "/portfolio/clippboard.webp",
+  },
+  {
+    title: "Clínica do Corpo",
+    category: "Site institucional",
+    problem:
+      "Academia sem site, com horário e informações espalhados em posts do Instagram.",
+    solution:
+      "Site com a estrutura da academia, painel de horário que mostra se está aberto agora, selo Wellhub e TotalPass e contato direto pelo WhatsApp.",
+    stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
+    result: "Horário, estrutura e contato numa página que o aluno acha no Google.",
+    url: "https://site-academia-clinica-do-corpo.vercel.app",
+    image: "/portfolio/academia.webp",
+  },
+  {
+    title: "Padaria Rafael Vidal",
+    category: "Site + cardápio digital",
+    problem:
+      "Padaria com cardápio só impresso e sem um endereço na internet pra mostrar a casa.",
+    solution:
+      "Site institucional e cardápio digital com a identidade tirada do cardápio impresso: horários, a casa, galeria dos pratos e delivery.",
+    stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
+    result: "Cardápio no celular do cliente e site com horário e contato sempre à mão.",
+    url: "https://padaria-vidal-site.vercel.app",
+    image: "/portfolio/padaria.webp",
+  },
+  {
+    title: "TORQUE Máquinas",
+    category: "Projeto conceito",
+    problem:
+      "Venda e locação de máquinas pesadas costuma ser catálogo em PDF e telefone.",
+    solution:
+      "Site com catálogo filtrável, ficha técnica de cada máquina e pedido de cotação com WhatsApp.",
+    stackUsed: ["React", "Vite", "Framer Motion"],
+    result: "Do catálogo à cotação sem sair da página.",
+    url: "https://torque-maquinas.vercel.app",
+    image: "/portfolio/torque.webp",
+  },
+  {
+    title: "AgendaSorriso",
+    category: "Automação com IA",
+    problem:
+      "Clínicas odontológicas perdendo paciente porque a mensagem no WhatsApp fica sem resposta fora do horário.",
+    solution:
+      "Agente de IA no WhatsApp que responde e agenda consulta, com página de venda própria. O formulário grava o lead no CRM e, se o banco não responder, a mensagem vai pronta pro WhatsApp.",
+    stackUsed: ["HTML/CSS", "JavaScript", "Supabase", "Meta Pixel"],
+    result: "Nenhum lead se perde: ou cai no CRM, ou chega no WhatsApp com os dados preenchidos.",
+    url: "https://agendasorriso-lp.vercel.app",
+    image: "/portfolio/agendasorriso.webp",
+  },
+  {
+    title: "Pauta",
+    category: "Aplicativo",
+    problem:
+      "Estudante do ENEM treinando redação sem correção e estudando matéria sem saber o que cai mais.",
+    solution:
+      "App de treino com redação corrigida nas 5 competências e questões reais das provas anteriores nas 4 áreas, com a pauta do dia e contagem até a prova.",
+    stackUsed: ["Next.js", "TypeScript", "Tailwind", "IA"],
+    result: "Redação e matérias no mesmo app, com evolução por competência a cada correção.",
+    url: "https://pauta-enem.vercel.app",
+    image: "/portfolio/pauta.webp",
+  },
+  {
+    title: "Conexte Tecnologia",
+    category: "Site institucional",
+    problem:
+      "Empresa de infraestrutura de TI sem presença digital à altura, atendendo empresas privadas e órgãos públicos.",
+    solution:
+      "Site institucional sob medida com animações GSAP, identidade própria e foco em geração de contato.",
+    stackUsed: ["HTML/CSS", "JavaScript", "GSAP", "Vercel"],
+    result: "Presença digital profissional e canal de contato direto via WhatsApp.",
+    url: "https://conexte.com.br",
+    image: "/portfolio/conexte.webp",
+  },
+  {
+    title: "Cardápio Santa Helena",
+    category: "Cardápio digital",
+    problem:
+      "Panificadora dependia de cardápio físico, difícil de atualizar e sem acesso pelo celular do cliente.",
+    solution:
+      "Cardápio digital responsivo com busca, categorias, destaques e botão de pedido no WhatsApp.",
+    stackUsed: ["HTML/CSS", "JavaScript", "Vercel"],
+    result: "Cardápio acessível por QR Code, atualização instantânea e pedidos via WhatsApp.",
+    url: "https://cardapio-santa-helena.vercel.app",
+    image: "/portfolio/santahelena.webp",
   },
 ];
 

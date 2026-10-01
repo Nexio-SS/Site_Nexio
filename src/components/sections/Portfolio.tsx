@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { portfolio } from "@/lib/content";
@@ -51,7 +52,10 @@ export function Portfolio() {
   }, [paused, scrollBy]);
 
   return (
-    <section id="portfolio" className="border-b border-line bg-surface py-24 md:py-32">
+    <section
+      id="portfolio"
+      className="border-b border-line bg-surface py-24 md:py-32"
+    >
       <div className="container-nx">
         <div className="flex items-end justify-between gap-6">
           <div>
@@ -83,57 +87,89 @@ export function Portfolio() {
             >
               <article
                 data-card
-                className="flex h-full flex-col rounded-xl border border-line bg-bg p-7 transition-colors hover:border-line-strong"
+                className="group flex h-full flex-col overflow-hidden rounded-xl border border-line bg-bg transition-colors hover:border-line-strong"
               >
-                <span className="w-fit rounded-full border border-line px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-accent">
-                  {c.category}
-                </span>
-                <h3 className="mt-5 text-lg font-semibold tracking-tight">
-                  {c.title}
-                </h3>
+                {c.image && (
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    className="relative block aspect-[16/10] overflow-hidden border-b border-line bg-surface"
+                  >
+                    <Image
+                      src={c.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 60vw, 85vw"
+                      className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                    />
+                  </a>
+                )}
+                <div className="flex flex-1 flex-col p-7">
+                  <span className="w-fit rounded-full border border-line px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-accent">
+                    {c.category}
+                  </span>
+                  <h3 className="mt-5 text-lg font-semibold tracking-tight">
+                    {c.title}
+                  </h3>
 
-                <dl className="mt-5 space-y-4 text-sm">
-                  <div>
-                    <dt className="font-mono text-[11px] uppercase tracking-wider text-muted">
-                      Problema
-                    </dt>
-                    <dd className="mt-1 text-muted">{c.problem}</dd>
-                  </div>
-                  <div>
-                    <dt className="font-mono text-[11px] uppercase tracking-wider text-muted">
-                      Solução
-                    </dt>
-                    <dd className="mt-1 text-fg">{c.solution}</dd>
-                  </div>
-                </dl>
+                  <dl className="mt-5 space-y-4 text-sm">
+                    <div>
+                      <dt className="font-mono text-[11px] uppercase tracking-wider text-muted">
+                        Problema
+                      </dt>
+                      <dd className="mt-1 text-muted">{c.problem}</dd>
+                    </div>
+                    <div>
+                      <dt className="font-mono text-[11px] uppercase tracking-wider text-muted">
+                        Solução
+                      </dt>
+                      <dd className="mt-1 text-fg">{c.solution}</dd>
+                    </div>
+                  </dl>
 
-                <div className="mt-auto pt-6">
-                  <div className="flex flex-wrap gap-2">
-                    {c.stackUsed.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded border border-line px-2 py-1 font-mono text-[11px] text-muted"
+                  <div className="mt-auto pt-6">
+                    <div className="flex flex-wrap gap-2">
+                      {c.stackUsed.map((t) => (
+                        <span
+                          key={t}
+                          className="rounded border border-line px-2 py-1 font-mono text-[11px] text-muted"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="mt-4 border-t border-line pt-4 text-sm font-medium text-accent">
+                      {c.result}
+                    </p>
+                    {c.url && (
+                      <a
+                        href={c.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-fg transition-colors hover:text-accent"
                       >
-                        {t}
-                      </span>
-                    ))}
+                        Ver site
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M7 17L17 7M17 7H8M17 7v9"
+                            stroke="currentColor"
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </a>
+                    )}
                   </div>
-                  <p className="mt-4 border-t border-line pt-4 text-sm font-medium text-accent">
-                    {c.result}
-                  </p>
-                  {c.url && (
-                    <a
-                      href={c.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-fg transition-colors hover:text-accent"
-                    >
-                      Ver site
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path d="M7 17L17 7M17 7H8M17 7v9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </a>
-                  )}
                 </div>
               </article>
             </div>
@@ -158,7 +194,13 @@ function CarouselButton({
       aria-label={dir === "prev" ? "Anterior" : "Próximo"}
       className="flex h-11 w-11 items-center justify-center rounded-full border border-line text-fg transition-colors hover:border-line-strong hover:text-accent"
     >
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        aria-hidden="true"
+      >
         <path
           d={dir === "prev" ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"}
           stroke="currentColor"
